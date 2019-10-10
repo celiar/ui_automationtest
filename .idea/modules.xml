@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://D:\PycharmProjects\AutoZone-master\.idea\AutoZone.iml" filepath="D:\PycharmProjects\AutoZone-master\.idea\AutoZone.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Autohome/.idea/Autohome.iml" filepath="$PROJECT_DIR$/../Autohome/.idea/Autohome.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../ITest/.idea/ITest.iml" filepath="$PROJECT_DIR$/../ITest/.idea/ITest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../PT/.idea/PT.iml" filepath="$PROJECT_DIR$/../PT/.idea/PT.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../hellowordDj/.idea/hellowordDj.iml" filepath="$PROJECT_DIR$/../hellowordDj/.idea/hellowordDj.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../jiekou/.idea/jiekou.iml" filepath="$PROJECT_DIR$/../jiekou/.idea/jiekou.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../mysite/.idea/mysite.iml" filepath="$PROJECT_DIR$/../mysite/.idea/mysite.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../mytest/.idea/mytest.iml" filepath="$PROJECT_DIR$/../mytest/.idea/mytest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../panda/.idea/panda.iml" filepath="$PROJECT_DIR$/../panda/.idea/panda.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../practice/.idea/practice.iml" filepath="$PROJECT_DIR$/../practice/.idea/practice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../pxapi/.idea/pxapi.iml" filepath="$PROJECT_DIR$/../pxapi/.idea/pxapi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/pxat.iml" filepath="$PROJECT_DIR$/.idea/pxat.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../pxdemo/.idea/pxdemo.iml" filepath="$PROJECT_DIR$/../pxdemo/.idea/pxdemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../pxlocust/.idea/pxlocust.iml" filepath="$PROJECT_DIR$/../pxlocust/.idea/pxlocust.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../pxsys/.idea/pxsys.iml" filepath="$PROJECT_DIR$/../pxsys/.idea/pxsys.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../untitled/.idea/untitled.iml" filepath="$PROJECT_DIR$/../untitled/.idea/untitled.iml" />
+    </modules>
+  </component>
+</project>

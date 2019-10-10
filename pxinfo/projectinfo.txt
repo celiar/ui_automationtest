@@ -1,0 +1,70 @@
+#abstract：
+    工程优先级：project.info > pxconfig.py > object.xml > pxcase>...
+---------------------------------------------------------------------------
+#general：
+    project:金服api，顾问app，cbs系统
+    author:wang
+    date: 2019年08月14日起
+    lan_: python
+    util：airtest，poco，requests，pymysql，os等；
+    IDE: airtestIDE，pycharm，Fiddler，Navicat，F12，ADT等
+---------------------------------------------------------------------------
+#mobile：
+    udid:
+        adb devices >d:/udid.txt
+    apk,activity：
+        adb shell dumpsys activity activities|findstr Resumed >d:/acti.txt
+
+---------------------------------------------------------------------------
+#desc：
+    capture
+        执行脚本产生的截图（需在脚本增加截图功能）
+    pxcase
+        cbs 顾问APP与cbs交互，使用selenium处理
+            NonMP
+            simu
+            wenjinbao
+        cfgw 以顾问APP为发起点，或与后台管理系统有交互
+            customer 客户页
+            home 首页（IC身份1）
+            owner 我的页
+            product 产品页
+    pxframe
+        assertions 继承unittest.TestCase
+        driverbase 继承webdriver，二次开发
+        pxapi 接口请求
+        pxos_handle 系统级或其他非测试工具类操作
+        pxpoco 移动端app测试工具及操作
+        pxselenium 网页web测试工具及操作，基于webdriver做二次开发
+        pxutil 工程引包
+        pxwebbase 对web页面封装的方法（非定位工具）
+        send_email 封装的smtp邮件服务
+        testbase 测试工程基类，综合assertions\driverbase\pxpoco\pxselenium，
+                进行二次开发，实现测试配置持久化（测试类继承于testbase），避免异常造成测试程序中断
+
+    pxreport
+        配置信息可在pxconfig.py维护
+
+    zhengheruisen
+        爬虫需求，与cbs流程无关
+
+---------------------------------------------------------------------------
+#config
+    *.json是测试程序提交登录请求时自动产生的响应信息，非手动添加；
+    config.ini 推荐的另一种配置信息实现方式，留用；
+    pagebase.xml 配置一：网页元素的参数化，依据规则收集页面元素数据；
+    pxconfig 配置二：测试程序主要配置信息，可对信息进行定制；
+    runpxat 程序入口，unittest加载测试用例，htmltestrunner生成测试报告。
+
+---------------------------------------------------------------------------
+other 1、为实现自动化配置持久化，使用testbase框架，若开发人员未对登录验证码屏蔽，需注意测试程序运行时，pycharm控制台的提示输入信息
+      2、尽量多用try--except--else--finally处理流程，增加页面响应等待时长，使用class、id等定位时考虑模糊匹配导致定位失败。
+      3、首先对页面元素做定位，保证元素唯一或元素集合的索引唯一，用例依据实际用例设计方式，通过编辑操作步骤文本实现。
+achieve 1、工程起步，from selenium import webdriver，from poco.drivers.android.uiautomation import AndroidUiautomationPoco
+        2、定义getdriver方法，poco实例，根据需求封装配置方法
+        3、创建Locator类和方法，默认入参对象为webdriver实例，使用POM设计思想分别对页面、操作、配置封装，定义读取元素方法
+        4、TestBase继承unittest.TestCase,并使Locator实例化，添加各项配置持久化方法的实例
+        5、增加测试类继承TestBase，测试方法以test开头，由unittest.defaultTestLoader.discover检索测试方法
+        6、执行测试：HTMLTestReportCN.HTMLTestRunner.run运行测试套件
+        7、提交测试报告pxreport：执行测试结束后生成，开启stmp服务发送邮件
+

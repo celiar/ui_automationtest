@@ -1,0 +1,725 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object>
+    <cbs>
+        <!--if t == 'id':-->
+            <!--by = By.ID-->
+        <!--elif t == 'name':-->
+            <!--by = By.NAME-->
+        <!--elif t == 'xpath':-->
+            <!--by = By.XPATH-->
+        <!--elif t == 'class':-->
+            <!--by = By.CLASS_NAME-->
+        <!--elif t == 'linktext':-->
+            <!--by = By.LINK_TEXT-->
+        <!--elif t == 'plinktext':-->
+            <!--by = By.PARTIAL_LINK_TEXT-->
+        <!--elif t == 'tag':-->
+            <!--by = By.TAG_NAME-->
+        <!--elif t == 'css':-->
+            <!--by = By.CSS_SELECTOR-->
+        <登录页>
+            <手机 t="id" v="mobile"/>
+            <密码 t="id" v="password"/>
+            <验证码 t="id" v="validateCode"/>
+            <立即登录 t="css" v="[t='submit']"/>
+        </登录页>
+        <主页>
+            <背景 t="class" v="jiabeijing"/>
+            <首页 t="class" v="index">
+                <欢迎语 t="css" v="div.outerContainIndex>h1"/>
+                <用户名 t="css" v=".hiname>span"/>
+                <权限管理 t="class" v="authorityManagement"/>
+                <职员管理 t="class" v="staffManagement"/>
+                <退出 t="class" v="out"/>
+                <核心业务系统 t="class" v="chineseLogo"/>
+                <菜单一 t="xpath" v="//div[@class='navigation fl']/a[2]"/>
+                <菜单二 t="xpath" v="//div[@class='navigation fl']/a[3]"/>
+            </首页>
+            <页码>
+                <首页 t="xpath" v="//span[contains(text(), '首页')]"/>
+                <上一页 t="xpath" v="//span[contains(text(), '上一页')]"/>
+                <当前页 t="class" v="pageRKnumCur"/>
+                <下一页 t="xpath" v="//span[contains(text(), '下一页')]"/>
+                <尾页 t="xpath" v="//span[contains(text(), '尾页')]"/>
+                <转到页 t="id" v="goBtn"/>
+                <确定 t="css" v=".pagezhuan>b"/>
+                <共页 t="css" v=".pagezhuan+span>i"/>
+            </页码>
+            <IC管理 t="css" v="#icManagement>a">
+                <IC人员管理 t="class" v="icManage">
+                    <IC姓名 t="name" v="icName"/>
+                    <常驻办公地点 t="name" v="officeAddressName"/>
+                    <手机号 t="name" v="icMobile"/>
+                    <上架状态 t="css" v="input#status + p">
+                        <选项 t="css" v="div.fselect li"/>
+                    </上架状态>
+                    <日期起 t="name" v="icSearchTimeBegin"/>
+                    <日期止 t="name" v="icSearchTimeEnd"/>
+                    <查询 t="linktext" v="查询"/>
+                    <新增IC t="id" v="addIC"/>
+                    <导出 t="linktext" v="导出"/>
+                    <IC人员管理列表>
+                        <IC姓名 t="css" v="div.myProductListTable td:nth-child(2)"/>
+                        <常驻办公地点 t="" v="div.myProductListTable td:nth-child(3)"/>
+                        <上架状态 t="" v="div.myProductListTable td:nth-child(11)"/>
+                        <上架 t="linktext" v="上架"/>
+                        <下架 t="linktext" v="下架"/>
+                        <置顶 t="linktext" v="置顶"/>
+                    </IC人员管理列表>
+                </IC人员管理>
+                <IC预约 t="class" v="icAppointment">
+                    <预约人 t="name" v="appointEmployeeName"/>
+                    <IC姓名 t="name" v="icEmployeeName"/>
+                    <宣讲城市 t="name" v="preachAddress"/>
+                    <IC受理状态 t="css" v="input#state + p">
+                        <选项 t="css" v="#state~ul a"/>
+                    </IC受理状态>
+                    <查询 t="linktext" v="查询"/>
+                    <导出 t="class" v="export"/>
+                    <IC预约列表>
+                        <IC姓名 t="css" v="div.myProductListTable td:nth-child(2)"/>
+                        <预约人 t="css" v="div.myProductListTable td:nth-child(3)"/>
+                        <IC受理状态 t="css" v="div.myProductListTable td:nth-child(11)"/>
+                        <宣讲城市 t="css" v="div.myProductListTable td:nth-child(7)"/>
+                    </IC预约列表>
+                </IC预约>
+                <IC陪访 t="class" v="icAccompanying">
+                    <IC姓名 t="name" v="name"/>
+                    <所属顾问 t="name" v="employeeName"/>
+                    <顾问所属机构 t="name" v="employeeOrg"/>
+                    <是否关单 t="css" v="input#state + p">
+                        <选项 t="css" v="div.fselect li"/>
+                    </是否关单>
+                    <查询 t="linktext" v="查询"/>
+                    <IC陪访列表>
+                        <IC姓名 t="css" v="div.myProductListTable td:nth-child(2)"/>
+                        <所属顾问 t="css" v="div.myProductListTable td:nth-child(7)"/>
+                        <顾问所属机构 t="css" v="div.myProductListTable td:nth-child(8)"/>
+                        <是否关单 t="css" v="div.myProductListTable td:nth-child(9)"/>
+                        <详情 t="css" v="div.myProductListTable td:nth-child(18)"/>
+                    </IC陪访列表>
+
+                </IC陪访>
+                <对内培训 t="class" v="icTraining">
+                    <IC姓名 t="name" v="icEmployeeName"/>
+                    <手机号 t="name" v="icMobile"/>
+                    <培训主题 t="name" v="title"/>
+                    <查询 t="linktext" v="查询"/>
+                    <对内培训列表>
+                        <IC姓名 t="css" v="div.myProductListTable td:nth-child(2)"/>
+                        <手机号 t="css" v="div.myProductListTable td:nth-child(4)"/>
+                        <培训主题 t="css" v="div.myProductListTable td:nth-child(5)"/>
+                        <详情 t="linktext" v="详情"/>
+                    </对内培训列表>
+
+                </对内培训>
+                <论坛讲座 t="class" v="icForum">
+                    <IC姓名 t="name" v="icEmployeeName"/>
+                    <手机号 t="name" v="icMobile"/>
+                    <活动主题 t="name" v="title"/>
+                    <查询 t="linktext" v="查询"/>
+                    <论坛讲座列表>
+                        <IC姓名 t="css" v="div.myProductListTable td:nth-child(2)"/>
+                        <手机号 t="css" v="div.myProductListTable td:nth-child(4)"/>
+                        <培训主题 t="css" v="div.myProductListTable td:nth-child(5)"/>
+                        <详情 t="linktext" v="详情"/>
+                    </论坛讲座列表>
+                </论坛讲座>
+            </IC管理>
+            <销售管理 t="css" v="#salesManagement>a">
+                <到账列表 t="class" v="searchAccountList">
+                    <募集账号 t="name" v="accountNum"/>
+                    <对方姓名 t="name" v="otherPartyAccountName"/>
+                    <对方账户 t="name" v="otherPartyAccountNum"/>
+                    <流水匹配状态 t="css" v="input#state + p">
+                        <选项 t="css" v="div.fselect li"/>
+                    </流水匹配状态>>
+                    <预约单号 t="name" v="matchOrderNo"/>
+                    <匹配结果 t="css" v="#matchResult+ p">
+                        <选项 t="css" v="#matchResult~ul a"/>
+                    </匹配结果>
+                    <查询 t="linktext" v="查询"/>
+                    <到账列表列表>
+                        <募集账号 t="css" v="div.myProductListTable td:nth-child(9)"/>
+                        <对方姓名 t="css" v="div.myProductListTable td:nth-child(19)"/>
+                        <对方账户 t="css" v="div.myProductListTable td:nth-child(18)"/>
+                        <流水匹配状态 t="css" v="div.myProductListTable td:nth-child(4)"/>
+                        <预约单号 t="css" v="div.myProductListTable td:nth-child(5)"/>
+                        <匹配结果 t="css" v="div.myProductListTable td:nth-child(6)"/>
+                    </到账列表列表>
+                </到账列表>
+                <预约列表 t="class" v="bookingList">
+                    <产品名称 t="name" v="productName"/>
+                    <产品大类 t="css" v="#parentProductType+p">
+                        <选项 t="css" v="#parentProductType~ul a"/>
+                    </产品大类>
+                    <产品子类 t="css" v="#productType+p">
+                        <选项 t="css" v="#productType~ul a"/>
+                    </产品子类>
+                    <客户姓名 t="name" v="customerRealName"/>
+                    <预约流水匹配状态 t="css" v="#matchState~div p">
+                        <选项 t="css" v="#matchState~div a"/>
+                    </预约流水匹配状态>>
+                    <交易状态 t="css" v="#state~div p">
+                        <选项 t="css" v="#state~div a"/>
+                    </交易状态>
+                    <所属顾问 t="name" v="employeeName"/>
+                    <顾问所属机构 t="name" v="orgName"/>
+                    <预约单号 t="name" v="orderNo"/>
+                    <合同编号 t="name" v="contractNo"/>
+                    <银行卡号 t="name" v="bankCardNo"/>
+                    <查询 t="linktext" v="查询"/>
+                    <预约列表列表>
+
+                    </预约列表列表>
+
+                </预约列表>
+                <报单列表 t="class" v="declarationList">
+                    <!--#auditState~div li-->
+                    <审核状态 t="css" v="#auditState~div p">
+                        <选项 t="css" v="#auditState~div li"/>
+                    </审核状态>
+                    <产品名称 t="name" v="productName"/>
+                    <客户姓名 t="name" v="customerRealName"/>
+                    <交易状态 t="css" v="#state~div p">
+                        <选项 t="css" v="#state~div a"/>
+                    </交易状态>
+                    <所属顾问 t="name" v="employeeName"/>
+                    <所属机构 t="name" v="orgName"/>
+                    <预约单号 t="name" v="orderNo"/>
+                    <查询 t="linktext" v="查询"/>
+                    <报单列表列表>
+                        <审核状态 t="css" v="div.declarationListContain td:nth-child(14)"/>
+                        <产品名称 t="css" v="div.declarationListContain td:nth-child(4)"/>
+                        <客户姓名 t="css" v="div.declarationListContain td:nth-child(3)"/>
+                        <交易状态 t="css" v="div.declarationListContain td:nth-child(15)"/>
+                        <所属顾问 t="css" v="div.declarationListContain td:nth-child(9)"/>
+                        <所属机构 t="css" v="div.declarationListContain td:nth-child(10)"/>
+                        <预约单号 t="css" v="div.declarationListContain td:nth-child(2)"/>
+                    </报单列表列表>
+                </报单列表>
+                <我的清算 t="class" v="refundList">
+                    <!--我的清算，列表暂无数据-->
+                    <客户姓名 t="name" v="customerName"/>
+                    <证件号码 t="name" v="certificatesNo"/>
+                    <产品名称 t="name" v="productName"/>
+                    <产品大类 t="css" v="#parentProductType+p">
+                        <选项 t="css" v="#parentProductType~ul a"/>
+                    </产品大类>
+                    <产品子类 t="css" v="#productType+p">
+                        <选项 t="css" v="#productType~ul a"/>
+                    </产品子类>
+                    <回款状态 t="css" v="#returnMoneyState+p">
+                        <选项 t="css" v="#returnMoneyState~ul a"/>
+                    </回款状态>
+                    <查询 t="linktext" v="查询"/>
+                </我的清算>
+                <导入份额列表 t="class" v="shareImportSearch">
+                    <查询 t="linktext" v="查询"/>
+                    <导入文件名 t="name" v="fileName"/>
+                    <导入份额列表列表>
+                        <导入文件名 t="css" v=".survivtable td:nth-child(3)"/>
+                    </导入份额列表列表>
+                </导入份额列表>
+                <客户份额列表 t="class" v="customerShareSearch">
+                    <客户姓名 t="name" v="customerName"/>
+                    <证件号码 t="name" v="certificatesNo"/>
+                    <产品名称 t="name" v="productName"/>
+                    <查询 t="linktext" v="查询"/>
+                    <客户份额列表列表>
+                        <客户姓名 t="css" v=".survivtable td:nth-child(2)"/>
+                        <证件号码 t="css" v=".survivtable td:nth-child(4)"/>
+                        <产品名称 t="css" v=".survivtable td:nth-child(5)"/>
+                    </客户份额列表列表>
+                </客户份额列表>
+                <赎回列表 t="class" v="findLiquTradeOrderList">
+                    <客户姓名 t="name" v="realName"/>
+                    <证件号码 t="name" v="certificatesNo"/>
+                    <产品名称 t="name" v="productName"/>
+                    <产品大类 t="css" v="#parentProductType+p">
+                        <选项 t="css" v="#parentProductType~ul a"/>
+                    </产品大类>
+                    <产品子类 t="css" v="#productType+p">
+                        <选项 t="css" v="#productType~ul a"/>
+                    </产品子类>
+                    <查询 t="linktext" v="查询"/>
+                    <赎回列表列表>
+                        <客户姓名 t="css" v=".myProductListTable td:nth-child(2)"/>
+                        <证件号码 t="css" v=".myProductListTable td:nth-child(4)"/>
+                        <产品名称 t="css" v=".myProductListTable td:nth-child(5)"/>
+                    </赎回列表列表>
+                </赎回列表>
+                <继续持有列表 t="class" v="getHoldList">
+                    <产品名称 t="name" v="productName"/>
+                    <产品大类 t="css" v="#parentProductType+p">
+                        <选项 t="css" v="#parentProductType~ul a"/>
+                    </产品大类>
+                    <产品子类 t="css" v="#productType+p">
+                        <选项 t="css" v="#productType~ul a"/>
+                    </产品子类>
+                    <客户姓名 t="name" v="customerName"/>
+                    <财富顾问 t="name" v="employeeName"/>
+                    <所属机构 t="name" v="orgName"/>
+                    <查询 t="linktext" v="查询"/>
+                </继续持有列表>
+            </销售管理>
+            <产品管理 t="css" v="#productManagement>a">
+                <我的产品 t="linktext" v="我的产品">
+                    <产品名称 t="name" v="name"/>
+                    <产品大类 t="css" v="#parentProductType+p">
+                        <选项 t="css" v="#parentProductType~ul a"/>
+                    </产品大类>
+                    <产品子类 t="css" v="#productType+p">
+                        <选项 t="css" v="#productType~ul a"/>
+                    </产品子类>
+                    <审核状态 t="css" v="#auditState+p">
+                        <选项 t="css" v="#auditState~ul a"/>
+                    </审核状态>
+                    <产品来源 t="css" v="#source+p">
+                        <选项 t="css" v="#source~ul a"/>
+                    </产品来源>
+                    <募集类型 t="css" v="#raiseType+p">
+                        <选项 t="css" v="#raiseType~ul a"/>
+                    </募集类型>
+                    <查询 t="linktext" v="查询"/>
+                    <我的产品列表>
+                        <产品名称 t="css" v="div.myProductTable td:nth-child(2)"/>
+                        <产品大类 t="css" v="div.myProductTable td:nth-child(3)"/>
+                        <产品子类 t="css" v="div.myProductTable td:nth-child(4)"/>
+                        <审核状态 t="css" v="div.myProductTable td:nth-child(13)"/>
+                        <产品来源 t="css" v="div.myProductTable td:nth-child(7)"/>
+                        <募集类型 t="css" v="div.myProductTable td:nth-child(5)"/>
+
+                    </我的产品列表>
+                </我的产品>
+                <产品列表 t="class" v="productList">
+                    <产品名称 t="name" v="name"/>
+                    <产品大类 t="css" v="#parentProductType+p">
+                        <选项 t="css" v="#parentProductType~ul a"/>
+                    </产品大类>
+                    <产品子类 t="css" v="#productType+p">
+                        <选项 t="css" v="#productType~ul a"/>
+                    </产品子类>
+                    <募集类型 t="css" v="#raiseType+p">
+                        <选项 t="css" v="#raiseType~ul a"/>
+                    </募集类型>
+                    <审核状态 t="css" v="#auditState+p">
+                        <选项 t="css" v="#auditState~ul a"/>
+                    </审核状态>
+                    <产品状态 t="css" v="#productState+p">
+                        <选项 t="css" v="#productState~ul a"/>
+                    </产品状态>
+                    <产品来源 t="css" v="#source+p">
+                        <选项 t="css" v="#source~ul a"/>
+                    </产品来源>
+                    <合同状态 t="css" v="#contractSignatureState+p">
+                        <选项 t="css" v="#contractSignatureState~ul a"/>
+                    </合同状态>
+                    <查询 t="linktext" v="查询"/>
+                    <产品列表列表>
+                        <产品名称 t="css" v="div.myProductTable td:nth-child(2)"/>
+                        <募集类型 t="css" v="div.myProductTable td:nth-child(3)"/>
+                        <产品大类 t="css" v="div.myProductTable td:nth-child(4)"/>
+                        <产品子类 t="css" v="div.myProductTable td:nth-child(5)"/>
+                        <产品状态 t="css" v="div.myProductTable td:nth-child(7)"/>
+                        <产品来源 t="css" v="div.myProductTable td:nth-child(8)"/>
+                        <审核状态 t="css" v="div.myProductTable td:nth-child(16)"/>
+
+                    </产品列表列表>
+                </产品列表>
+                <产品审核 t="class" v="productAudit">
+                    <产品名称 t="name" v="productName"/>
+                    <产品大类 t="css" v="#parentProductType+p">
+                        <选项 t="css" v="#parentProductType~ul a"/>
+                    </产品大类>
+                    <产品子类 t="css" v="#productType+p">
+                        <选项 t="css" v="#productType~ul a"/>
+                    </产品子类>
+                    <募集类型 t="css" v="#raiseType+p">
+                        <选项 t="css" v="#raiseType~ul a"/>
+                    </募集类型>
+                    <审核状态 t="css" v="#auditState+p">
+                        <选项 t="css" v="#auditState~ul a"/>
+                    </审核状态>
+                    <产品状态 t="css" v="#productState+p">
+                        <选项 t="css" v="#productState~ul a"/>
+                    </产品状态>
+                    <产品来源 t="css" v="#source+p">
+                        <选项 t="css" v="#source~ul a"/>
+                    </产品来源>
+                    <申请操作 t="css" v="#type+p">
+                        <选项 t="css" v="#type~ul a"/>
+                    </申请操作>
+                    <查询 t="linktext" v="查询"/>
+                    <产品审核列表>
+                        <产品名称 t="css" v="div.myProductTable td:nth-child(2)"/>
+                        <产品大类 t="css" v="div.myProductTable td:nth-child(3)"/>
+                        <产品子类 t="css" v="div.myProductTable td:nth-child(4)"/>
+                        <募集类型 t="css" v="div.myProductTable td:nth-child(5)"/>
+                        <申请操作 t="css" v="div.myProductTable td:nth-child(7)"/>
+                        <产品状态 t="css" v="div.myProductTable td:nth-child(8)"/>
+                        <产品来源 t="css" v="div.myProductTable td:nth-child(9)"/>
+
+                    </产品审核列表>
+                </产品审核>
+                <产品类别 t="class" v="productCategory">
+                    <新增子类 t="class" v="addicon">
+                        <title t="id" v="editTitle"/>
+                        <产品大类名称 t="id" v="parentName">
+                            <选项 t="css" v="#parentName~ul a"/>
+                        </产品大类名称>
+                        <产品子类名称 t="name" v="name"/>
+                        <备注 t="name" v="remark"/>
+                        <确定 t="id" v="submitForm"/>
+                        <取消 t="css" v=".newAddProductBtn>.falseRaise"/>
+                    </新增子类>
+                </产品类别>
+                <存续列表 t="class" v="survivingList">
+                    <预约单号 t="name" v="orderNo"/>
+                    <产品名称 t="name" v="name"/>
+                    <产品大类 t="css" v="#parentProductType+p">
+                        <选项 t="css" v="#parentProductType~ul a"/>
+                    </产品大类>
+                    <产品子类 t="css" v="#productType+p">
+                        <选项 t="css" v="#productType~ul a"/>
+                    </产品子类>
+                    <募集类型 t="css" v="#raiseType+p">
+                        <选项 t="css" v="#raiseType~ul a"/>
+                    </募集类型>
+                    <客户姓名 t="name" v="customerRealName"/>
+                    <客户证件号 t="name" v="certificatesNo"/>
+                    <客户手机号 t="name" v="mobile"/>
+                    <所属顾问 t="name" v="employeeRealName"/>
+                    <顾问所属机构 t="name" v="employeeOrg"/>
+                    <交易状态 t="css" v="#tradeState+p">
+                        <选项 t="css" v="#tradeState~ul a"/>
+                    </交易状态>
+                    <是否下发佣金 t="css" v="#isGive+p">
+                        <选项 t="css" v="#isGive~ul a"/>
+                    </是否下发佣金>
+                    <查询 t="linktext" v="查询"/>
+                    <存续列表列表>
+                        <预约单号 t="css" v="div.survivtable td:nth-child(2)"/>
+                        <产品名称 t="css" v="div.survivtable td:nth-child(3)"/>
+                        <产品大类 t="css" v="div.survivtable td:nth-child(4)"/>
+                        <产品子类 t="css" v="div.myProductTable td:nth-child(5)"/>
+                        <募集类型 t="css" v="div.myProductTable td:nth-child(6)"/>
+                        <客户姓名 t="css" v="div.myProductTable td:nth-child(7)"/>
+                        <客户证件证号 t="css" v="div.myProductTable td:nth-child(9)"/>
+                        <客户联系电话 t="css" v="div.myProductTable td:nth-child(10)"/>
+                        <财富顾问 t="css" v="div.myProductTable td:nth-child(19)"/>
+                        <财富顾问所属机构 t="css" v="div.myProductTable td:nth-child(23)"/>
+                        <交易状态 t="css" v="div.myProductTable td:nth-child(27)"/>
+                        <是否下发佣金 t="css" v="div.myProductTable td:nth-child(28)"/>
+
+                    </存续列表列表>
+                </存续列表>
+                <清算列表 t="class" v="survivingList">
+                    <产品名称 t="name" v="name"/>
+                    <产品大类 t="css" v="#parentProductType+p">
+                        <选项 t="css" v="#parentProductType~ul a"/>
+                    </产品大类>
+                    <产品子类 t="css" v="#productType+p">
+                        <选项 t="css" v="#productType~ul a"/>
+                    </产品子类>
+                    <产品状态 t="css" v="#productState+p">
+                        <选项 t="css" v="#productState~ul a"/>
+                    </产品状态>
+                    <审核状态 t="css" v="#liquidationAuditState+p">
+                        <选项 t="css" v="#liquidationAuditState~ul a"/>
+                    </审核状态>
+                    <收益模式 t="css" v="#profitType+p">
+                        <选项 t="css" v="#profitType~ul a"/>
+                    </收益模式>
+                    <查询 t="linktext" v="查询"/>
+                    <清算列表列表>
+                        <产品名称 t="css" v="div.contractIssueContain td:nth-child(2)"/>
+                        <产品大类 t="css" v="div.contractIssueContain td:nth-child(3)"/>
+                        <产品子类 t="css" v="div.contractIssueContain td:nth-child(4)"/>
+                        <产品状态 t="css" v="div.contractIssueContain td:nth-child(5)"/>
+                        <审核状态 t="css" v="div.contractIssueContain td:nth-child(6)"/>
+                        <收益模式 t="css" v="div.contractIssueContain td:nth-child(10)"/>
+                        <操作 t="css" v="div.contractIssueContain td:nth-child(15)"/>
+                    </清算列表列表>
+                </清算列表>
+                <清算审核 t="class" v="getLiquidationAuditList">
+                    <产品名称 t="name" v="name"/>
+                    <产品大类 t="css" v="#parentProductType+p">
+                        <选项 t="css" v="#parentProductType~ul a"/>
+                    </产品大类>
+                    <产品子类 t="css" v="#productType+p">
+                        <选项 t="css" v="#productType~ul a"/>
+                    </产品子类>
+                    <产品状态 t="css" v="#productState+p">
+                        <选项 t="css" v="#productState~ul a"/>
+                    </产品状态>
+                    <审核状态 t="css" v="#liquidationAuditState+p">
+                        <选项 t="css" v="#liquidationAuditState~ul a"/>
+                    </审核状态>
+                    <收益模式 t="css" v="#profitType+p">
+                        <选项 t="css" v="#profitType~ul a"/>
+                    </收益模式>
+                    <查询 t="linktext" v="查询"/>
+                    <清算审核列表>
+                        <产品名称 t="css" v="div.contractIssueContain td:nth-child(2)"/>
+                        <产品大类 t="css" v="div.contractIssueContain td:nth-child(3)"/>
+                        <产品子类 t="css" v="div.contractIssueContain td:nth-child(4)"/>
+                        <产品状态 t="css" v="div.contractIssueContain td:nth-child(5)"/>
+                        <审核状态 t="css" v="div.contractIssueContain td:nth-child(6)"/>
+                        <收益模式 t="css" v="div.contractIssueContain td:nth-child(10)"/>
+                        <操作 t="css" v="div.contractIssueContain td:nth-child(15)"/>
+                    </清算审核列表>
+                </清算审核>
+            </产品管理>
+            <合同管理 t="css" v="#clientManagement>a">
+                <历总 t="class" v="contractIssueListHQ">
+                    <产品名称 t="name" v="productName"/>
+                    <产品大类 t="css" v="#parentProductType+p">
+                        <选项 t="css" v="#parentProductType~ul a"/>
+                    </产品大类>
+                    <产品子类 t="css" v="#productType+p">
+                        <选项 t="css" v="#productType~ul a"/>
+                    </产品子类>
+                    <客户姓名 t="name" v="customerName"/>
+                    <财富顾问 t="name" v="employeeName"/>
+                    <所属机构 t="name" v="orgName"/>
+                    <合同使用情况 t="css" v="#contractUserState+p">
+                        <选项 t="css" v="#contractUserState~ul a"/>
+                    </合同使用情况>
+                    <合同发放状态 t="css" v="#contractSendState+p">
+                        <选项 t="css" v="#contractSendState~ul a"/>
+                    </合同发放状态>
+                    <查询 t="linktext" v="查询"/>
+                    <历总列表>
+                        <产品名称 t="css" v="div.contractIssueContain td:nth-child(3)"/>
+                        <产品大类 t="css" v="div.contractIssueContain td:nth-child(4)"/>
+                        <产品子类 t="css" v="div.contractIssueContain td:nth-child(5)"/>
+                        <客户姓名 t="css" v="div.contractIssueContain td:nth-child(2)"/>
+                        <财富顾问 t="css" v="div.contractIssueContain td:nth-child(10)"/>
+                        <所属机构 t="css" v="div.contractIssueContain td:nth-child(11)"/>
+                        <合同使用情况 t="css" v="div.contractIssueContain td:nth-child(13)"/>
+                        <合同发放状态 t="css" v="div.contractIssueContain td:nth-child(12)"/>
+                    </历总列表>
+                </历总>
+                <历分 t="class" v="contractIssueListDepartment">
+                    <产品名称 t="name" v="productName"/>
+                    <产品大类 t="css" v="#parentProductType+p">
+                        <选项 t="css" v="#parentProductType~ul a"/>
+                    </产品大类>
+                    <产品子类 t="css" v="#productType+p">
+                        <选项 t="css" v="#productType~ul a"/>
+                    </产品子类>
+                    <客户姓名 t="name" v="customerName"/>
+                    <财富顾问 t="name" v="employeeName"/>
+                    <所属机构 t="name" v="orgName"/>
+                    <合同使用情况 t="css" v="#contractUserState+p">
+                        <选项 t="css" v="#contractUserState~ul a"/>
+                    </合同使用情况>
+                    <合同发放状态 t="css" v="#contractSendState+p">
+                        <选项 t="css" v="#contractSendState~ul a"/>
+                    </合同发放状态>
+                    <查询 t="linktext" v="查询"/>
+                    <历分列表>
+                        <产品名称 t="css" v="div.contractIssueContain td:nth-child(3)"/>
+                        <产品大类 t="css" v="div.contractIssueContain td:nth-child(4)"/>
+                        <产品子类 t="css" v="div.contractIssueContain td:nth-child(5)"/>
+                        <客户姓名 t="css" v="div.contractIssueContain td:nth-child(2)"/>
+                        <财富顾问 t="css" v="div.contractIssueContain td:nth-child(10)"/>
+                        <所属机构 t="css" v="div.contractIssueContain td:nth-child(11)"/>
+                        <合同使用情况 t="css" v="div.contractIssueContain td:nth-child(13)"/>
+                        <合同发放状态 t="css" v="div.contractIssueContain td:nth-child(12)"/>
+                    </历分列表>
+                </历分>
+                <历统计 t="class" v="contractStatistics">
+                    <产品名称 t="name" v="productName"/>
+                    <产品大类 t="css" v="#parentProductType+p">
+                        <选项 t="css" v="#parentProductType~ul a"/>
+                    </产品大类>
+                    <产品子类 t="css" v="#productType+p">
+                        <选项 t="css" v="#productType~ul a"/>
+                    </产品子类>
+                    <产品状态 t="css" v="#productState+p">
+                        <选项 t="css" v="#productState~ul a"/>
+                    </产品状态>
+                    <查询 t="linktext" v="查询"/>
+                    <历统计列表>
+                        <产品名称 t="css" v=".refundTheAudit_table td:nth-child(2)"/>
+                        <产品大类 t="css" v=".refundTheAudit_table td:nth-child(3)"/>
+                        <产品子类 t="css" v=".refundTheAudit_table td:nth-child(4)"/>
+                        <产品状态 t="css" v=".refundTheAudit_table td:nth-child(5)"/>
+                    </历统计列表>
+                </历统计>
+                <总发 t="class" v="contractIssueListHQNew">
+                    <产品名称 t="name" v="productName"/>
+                    <募集类型 t="css" v="#raiseType+p">
+                        <选项 t="css" v="#raiseType~ul a"/>
+                    </募集类型>
+                    <分部收件人姓名 t="name" v="branchRecipientsName"/>
+                    <合同发放状态 t="css" v="#grantState+p">
+                        <选项 t="css" v="#grantState~ul a"/>
+                    </合同发放状态>
+                    <机构名称 t="name" v="applicantOrgName"/>
+                    <快递单号 t="name" v="grantCourierOrderNo"/>
+                    <查询 t="linktext" v="查询"/>
+                    <总发列表>
+                        <产品名称 t="css" v=".myProductListTable td:nth-child(2)"/>
+                        <募集类型 t="css" v=".myProductListTable td:nth-child(3)"/>
+                        <分部收件人姓名 t="css" v=".myProductListTable td:nth-child(10)"/>
+                        <合同发放状态 t="css" v=".myProductListTable td:nth-child(9)"/>
+                        <机构名称 t="css" v=".myProductListTable td:nth-child(4)"/>
+                        <快递单号 t="css" v=".myProductListTable td:nth-child(14)"/>
+                    </总发列表>
+                </总发>
+                <总管 t="class" v="contractStatistics">
+                    <产品名称 t="name" v="productName"/>
+                    <认购起点 t="name" v="minPurchaseAmount"/>
+                    <客户姓名 t="name" v="realName"/>
+                    <所在机构 t="name" v="transferOrgName"/>
+                    <原机构 t="name" v="originOrgName"/>
+                    <财富顾问 t="name" v="employeeName"/>
+                    <顾问所属机构 t="name" v="employeeOidsName"/>
+                    <合同编号 t="name" v="contractNo"/>
+                    <合同发放状态 t="css" v="#grantState+p">
+                        <选项 t="css" v="#grantState~ul a"/>
+                    </合同发放状态>
+                    <合同分配情况 t="css" v="#distributeState+p">
+                        <选项 t="css" v="#distributeState~ul a"/>
+                    </合同分配情况>
+                    <合同使用状态 t="css" v="#useState+p">
+                        <选项 t="css" v="#useState~ul a"/>
+                    </合同使用状态>
+                    <查询 t="linktext" v="查询"/>
+                    <总管列表>
+                        <合同编号 t="css" v=".myProductListTable td:nth-child(4)"/>
+                        <客户姓名 t="css" v=".myProductListTable td:nth-child(5)"/>
+                        <产品名称 t="css" v=".myProductListTable td:nth-child(7)"/>
+                        <合同发放状态 t="css" v=".myProductListTable td:nth-child(15)"/>
+                        <合同分配情况 t="css" v=".myProductListTable td:nth-child(12)"/>
+                        <合同使用状态 t="css" v=".myProductListTable td:nth-child(14)"/>
+                    </总管列表>
+                </总管>
+                <分签 t="class" v="contractIssueListDepartmentNew">
+                    <产品名称 t="name" v="productName"/>
+                    <募集类型 t="css" v="#raiseType+p">
+                        <选项 t="css" v="#raiseType~ul a"/>
+                    </募集类型>
+                    <快递单号 t="name" v="grantCourierOrderNo"/>
+                    <合同发放状态 t="css" v="#grantState+p">
+                        <选项 t="css" v="#grantState~ul a"/>
+                    </合同发放状态>
+                    <查询 t="linktext" v="查询"/>
+                    <分签列表>
+                        <产品名称 t="css" v=".myProductListTable td:nth-child(2)"/>
+                        <募集类型 t="css" v=".myProductListTable td:nth-child(3)"/>
+                        <合同发放状态 t="css" v=".myProductListTable td:nth-child(8)"/>
+                        <快递单号 t="css" v=".myProductListTable td:nth-child(13)"/>
+                    </分签列表>
+                </分签>
+                <分用 t="class" v="contractStatistics">
+
+                </分用>
+                <合同统计 t="class" v="contractUseStatistics">
+                    <产品名称 t="name" v="productName"/>
+                    <产品大类 t="css" v="#parentProductType+p">
+                        <选项 t="css" v="#parentProductType~ul a"/>
+                    </产品大类>
+                    <产品子类 t="css" v="#productType+p">
+                        <选项 t="css" v="#productType~ul a"/>
+                    </产品子类>
+                    <产品状态 t="css" v="#productState+p">
+                        <选项 t="css" v="#productState~ul a"/>
+                    </产品状态>
+                    <查询 t="linktext" v="查询"/>
+                    <合同统计列表>
+                        <产品名称 t="css" v=".refundTheAudit_table td:nth-child(2)"/>
+                        <产品大类 t="css" v=".refundTheAudit_table td:nth-child(3)"/>
+                        <产品子类 t="css" v=".refundTheAudit_table td:nth-child(4)"/>
+                        <产品状态 t="css" v=".refundTheAudit_table td:nth-child(5)"/>
+                    </合同统计列表>
+                </合同统计>
+                <合同模板 t="class" v="contractTemplate">
+                    <模板名称 t="name" v="name"/>
+                    <状态 t="css" v="#state+p">
+                        <选项 t="css" v="#state~ul a"/>
+                    </状态>
+                    <查询 t="linktext" v="查询"/>
+                    <合同模板列表>
+                        <模板名称 t="css" v=".myProductListTable td:nth-child(2)"/>
+                        <状态 t="css" v=".myProductListTable td:nth-child(4)"/>
+                    </合同模板列表>
+                </合同模板>
+            </合同管理>
+            <在售产品 t="css" v=".onSale span">
+                <产品名称 t="name" v="productName"/>
+                <产品大类 t="css" v="#parentProductType+p">
+                    <选项 t="css" v="#parentProductType~ul a"/>
+                </产品大类>
+                <产品子类 t="css" v="#productType+p">
+                    <选项 t="css" v="#productType~ul a"/>
+                </产品子类>
+                <产品组织形式 t="css" v="#attribute+p">
+                    <选项 t="css" v="#attribute~ul a"/>
+                </产品组织形式>
+                <产品状态 t="css" v="#productState+p">
+                    <选项 t="css" v="#productState~ul a"/>
+                </产品状态>
+                <产品来源 t="css" v="#source+p">
+                    <选项 t="css" v="#source~ul a"/>
+                </产品来源>
+                <在售产品列表>
+                    <产品名称 t="css" v=".productTitle>p"/>
+                    <产品大类 t="xpath" v="//div[@class='productSingleBottom']//li[2]"/>
+                    <产品子类 t="xpath" v="//div[@class='productSingleBottom']//li[3]"/>
+                    <产品组织形式 t="xpath" v="//div[@class='productSingleBottom']//li[4]"/>
+                    <产品状态 t="css" v=".productTitle>span"/>
+                    <产品来源 t="xpath" v="//div[@class='productSingleBottom']//li[1]"/>
+                </在售产品列表>
+                <查询 t="linktext" v="查询"/>
+            </在售产品>
+        </主页>
+        <产品列表>
+            <产品大类 t="css" v="#parentProductType+p">
+                <选项 t="css" v="#parentProductType~ul a"/>
+            </产品大类>
+            <产品子类 t="css" v="#productType+p">
+                <选项 t="css" v="#productType~ul a"/>
+            </产品子类>
+            <产品状态 t="css" v="#productState+p">
+                <选项 t="css" v="#productState~ul a"/>
+            </产品状态>
+            <产品名称输入 t="name" v="name"/>
+            <查询 t="linktext" v="查询"/>
+            <产品名称 t="class" v="name"/>
+            <产品规模 t="xpath" v="//td[@class='name']/../td[7]"/>
+            <!--<查询 t="linktext" v="查询"/>-->
+            <!--<查询 t="linktext" v="查询"/>-->
+        </产品列表>
+        <产品审核>
+            <产品名称输入 t="name" v="productName"/>
+            <查询 t="linktext" v="查询"/>
+        </产品审核>
+    </cbs>
+    <gw>
+        <产品 t="xpath" v="//android.widget.TextView[@text='产品']">
+            <私募基金 t="id" v="com.puxin.accountant.debug:id/tv_private">
+                <类固收类 t="id" v="com.puxin.accountant.debug:id/fixed_name">
+                    <产品规模 t="id" v="scale"/>
+                    <起投金额 t="id" v="purchaseAmountDesc"/>
+                    <产品期限 t="id" v="period"/>
+                </类固收类>
+
+            </私募基金>
+            <稳金宝>
+                <智信 t="aaa" v="//.kjrrrr">
+                    <h></h>
+                </智信>
+            </稳金宝>
+
+        </产品>
+    </gw>
+    <link>
+        <活动 t="" v="">
+
+        </活动>
+    </link>
+</object>
