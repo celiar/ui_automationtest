@@ -8,7 +8,7 @@ if __name__ == '__main__':
     # jflogin_api()
 
     # 需输入前端登录页面的验证码，获取登录后cookies，实现实例webdriver刷入cookies而绕过验证码
-    get_cbslogin_cookies()
+    # get_cbslogin_cookies()
     #
     # 因受限于安全机制，顾问app请求登录api后，操作前端时需再次请求验证码，一端多种请求方式不适用于自动化，暂弃用
     # gwlogin_api()
