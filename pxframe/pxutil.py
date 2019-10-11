@@ -1,6 +1,6 @@
 from pxframe.pxos_handle import *
 from pxframe.pxapi import *
-from pxframe.pxpoco import *
+# from pxframe.pxpoco import *
 from pxframe.pxselenium import *
 from pxframe.send_email import *
 from pxframe.driverbase import *
