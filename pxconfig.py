@@ -11,7 +11,7 @@ from pxframe.pxos_handle import *
 # 切换系统环境，准生产zsc，生产sc
 pmode = 'zsc'.lower()
 # 测试系统的配置信息,入参不区分大小写ff,ch,ie
-star_dir = './pxcase/demo'
+star_dir = './pxcase/cbs/NonMP'
 browser_type = 'ch'
 object_path = './pagebase.xml'
 pattern = 'test*.py'
